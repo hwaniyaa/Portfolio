@@ -1,0 +1,31 @@
+
+server:
+  port: 9092
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  thymeleaf:
+    check-template-location: true
+    prefix:  classpath:/templates/
+    suffix:  .html
+    cache:  false
+  datasource:
+    driver-class-name:  oracle.jdbc.driver.OracleDriver
+    url:  jdbc:oracle:thin:@localhost:1521:xe
+    username:  rlfghks12q
+    password:  1234
+
+# mybatis mapping
+mybatis:
+  config-location: classpath:sqlmapper/config/config.xml
+  mapper-locations: classpath:sqlmapper/sql/**/*.xml
+
+file:
+  path: C:/tempStorage/upload/
+
+
+logging:
+    level:
+      '[com.espoir.espoir]':  DEBUG

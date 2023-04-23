@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/splitting.css">
+
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/myPage.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/about.css">
+  <link rel="stylesheet" href="/css/skills.css">
+  <link rel="stylesheet" href="/css/portfolio.css">
+
+  <script src="/js/layout.js" defer></script>
+  <script src="/js/myPage.js" defer></script>
+  <script src="/js/jquery-3.6.3.min.js"></script>
+  <script src="/js/splitting.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.ui.min.js"></script>
+
+  <title>Document</title>
+</head>
+<body>
+  <div id="homePage-box">
+    <header id="homePage-header">
+      <section class="homePage-header-area">
+        <article class="homePage-header-logo">
+          <div class="header-logo-content01">
+            <p><a href="/"><img src="/images/logo.png" alt=""></a></p>
+            <p>Web Developer</p>
+          </div><!-- .header-logo-content01 -->
+        </article><!-- .homePage-header-logo -->
+        <article class="homePage-header-nav">
+          <div class="header-nav--menu">
+            <ul>
+              <li><a href="/main" class="onClick">Main</a></li>
+              <li><a href="/about" class="onClick">About</a></li>
+              <li><a href="/skills" class="onClick">My Skills</a></li>
+              <li><a href="/portfolio" class="onClick">Portfolio</a></li>
+            </ul>
+          </div><!-- .header-nav--menu -->
+        </article><!-- .homePage-header-nav -->
+        <article class="homePage-header-footer">
+          <!-- 푸터 부분 -->
+        </article><!-- .homePage-header-footer -->
+      </section><!-- .homePage-header-area -->
+    </header><!-- #homePage-header -->
+    <main id="homePage-main" layout:fragment="contents">
+      <section class="pageChange">
+      </section>
+    </main>
+  </div>
+
+  <!-- <script>
+    // 로딩없이 나오기
+    $(document).ready(function(){
+    $(document).on("click", ".header-nav--menu ul li a", function(event){
+      history.pushState("null", "null", event.target.href); //페이지 바꾸기
+      $('#homePage-main').load(event.target.href+" .pageChange"); //페이지 바뀌는곳
+      event.preventDefault(); //동작은 하는데 리로딩은 안되기
+      });
+      $(window).on("popstate", function(event){ //뒤로가기 할때 동작시키기
+        $('#homePage-main').load(location.href+" .pageChange"); //페이지 바뀌는곳
+      });
+    });
+  </script> -->
+</body>
+</html>
+
+<!-- 참고 사이트 -->
+<!-- https://jacekjeznach.com/about/ -->

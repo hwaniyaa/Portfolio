@@ -1,0 +1,36 @@
+
+server:
+  port: 9090
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  thymeleaf:
+    check-template-location: true
+    prefix:  classpath:/templates/
+    suffix:  .html
+    cache:  false
+  datasource:
+    driver-class-name:  oracle.jdbc.driver.OracleDriver
+    url:  jdbc:oracle:thin:@localhost:1521:xe
+    username:  myportfolio
+    password:  1234
+
+# mybatis mapping
+mybatis:
+# mapper.xml location
+  mapper-locations:  classpath:sqlmapper/mapper/*.xml
+  config-location:  classpath:sqlmapper/config/config.xml
+
+file:
+  path: C:/tempStorage/upload/
+
+
+logging:
+    level:
+      '[com.rlfghks12q.myportfolio]':  DEBUG
+
+
+
+

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="/img/bs_favicon.png">
+  <!-- css / reset -->
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/stylem.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- font -->
+  <link rel="stylesheet" href="/css/font/font.css">
+  <!-- jQuery -->
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- 플러그인 연결 -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <script src="/js/jquery.scrollToGiveClass.js"></script>
+  <!-- js 호출 -->
+  <script src="/js/script.js" defer></script>
+  <script src="/js/main.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <div class="top-bg">
+      <div class="top-menu01">
+        <div class="top-logo">
+          <a href="#">espoir</a>
+        </div> <!--// .top-logo-->
+        <th:block th:if="${session == null}">
+          <div class="top-txt">
+            <a id="loginBtn">로그인</a>
+            <a id="joinBtn">회원가입</a>
+          </div> <!--// .top-txt-->
+        </th:block>
+        <th:block th:unless="${session == null}">
+          <div class="top-txt">
+            <a href="/main/mypage">마이페이지</a>
+            <a href="/">로그아웃</a>
+          </div> <!--// .top-txt-->
+        </th:block>
+      </div> <!--// .top-menu-->
+      <div class="top-menu02">
+        <div class="top-tab">
+        </div> <!--// .top-tab-->
+      </div> <!--// .top-menu02-->
+    </div> <!--// .top-bg-->
+  </header>
+  <main layout:fragment="contents">
+
+  </main>
+  <footer> 
+    <div class="footer-bg">
+      <div class="footer-main">
+        <ul>
+          <li><a href="#">비회원 조회</a></li>
+          <li><a href="#">브랜드 소개</a></li>
+        </ul>
+        <ul>
+          <li>MAKEUP</li>
+          <li><span>B E A U T Y &nbsp; C O U N S E L I N G</span></li>
+          <li>
+            언제 어디서든 언택트!<br>
+            아티스트와 상담하세요!
+          </li>
+        </ul>
+        <ul>
+          <li>고객센터</li>
+          <li>080 1234 5678</li>
+          <li>상담시간 13:00 ~ 17:00<br>
+            (월~금, 공휴일 제)</li>
+        </ul>
+        <ul>
+          <li>
+            <ul class="icon">
+              <li><a class="insta" href="#"></a></li>
+              <li><a class="facebook" href="#"></a></li>
+              <li><a class="twitter" href="#"></a></li>
+              <li><a class="kakao" href="#"></a></li>
+              <li><a class="blog" href="#"></a></li>
+              <li><a class="mail" href="#"></a></li>
+            </ul>
+          </li>
+          <li>
+            <ul class="txt">
+              <li><a href="#">로그인</a></li>
+              <li><a href="#">회원가입</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div> <!--// .footer-main-->
+      <div class="footer-sub">
+        <ul>
+          <li>서비스 이용약관</li>
+          <li>개인정보처리방침</li>
+          <li>영상기기 관리방침</li>
+          <li>사업자 정보 확인</li>
+          <li>이메일 무단수집 거부</li>
+          <li>전자공고</li>
+        </ul>
+        <ul>
+          <li>
+            (주)쀼띠아 대표이사: 김길환 &nbsp;&nbsp;&nbsp; 본사 : 전주시 덕진구 도당산 1층<br>
+            사업자번호: 152-1234-45678 &nbsp;&nbsp;&nbsp; 통신판매업신고번호 : 제 2022-전주덕진-1234호 &nbsp;&nbsp;&nbsp; <b>사업자 정보 확인</b><br>
+            개인정보보호책임자: 김길환 &nbsp;&nbsp;&nbsp; 고객상담: <b>080-123-4567</b> &nbsp;&nbsp;&nbsp; 이메일: rlfghks12q@naver.com &nbsp;&nbsp;&nbsp; 호스팅제공자 : ㈜쀼띠아<br>
+            고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰에서 가입한 이니시스 구매안전 서비스(에스크로)를 이용하실 수 있습니다. <b>서비스 가입사실 확인</b> 
+          </li>
+        </ul>
+        <ul>
+          <li>
+            Copyright &copy; 2021 espoir. All Rights Reserved.
+          </li>
+        </ul>
+      </div> <!--// .footer-sub-->
+    </div> <!--// .footer-bg-->
+  </footer>
+
+  <!-- 모달 박스 영역 -->
+    <!-- 로그인 -->
+    <section id="modalBoxLogin" class="modalBoxLoginJoin">
+      <article id="modalCloseBtn" class="modalCloseBtn">
+      </article><!-- modalCloseBtn -->
+      <article id="modalOpenBox" class="modalOpenBox">
+        <div class="modalOpenBox-left">
+          <div class="modalOpenBox-left--title">
+            <p>Welcome!</p>
+          </div><!-- modalOpenBox-left--title -->
+          <div class="modalOpenBox-left--img">
+            <img src="img/smile.png" alt="">
+          </div><!-- modalOpenBox-left--img -->
+          <div class="modalOpenBox-left--signUp">
+            <p>Not a memeber yet? <a id="clickRegister">Register now</a></p>
+          </div><!-- modalOpenBox-left--signUp -->
+        </div><!-- modalOpenBox-left -->
+        <div class="modalOpenBox-right">
+          <div class="modalOpenBox-right--title">
+            <p>Log in</p>
+          </div><!-- modalOpenBox-right--title -->
+          <form action="/main/loginProcess" method="POST">
+            <div class="form">
+              <p>USERNAME</p>
+              <input class="form-control form-control-lg" type="text" placeholder="USERNAME" aria-label=".form-control-lg example" name="memberID">
+              <p>PASSWORD</p>
+              <input class="form-control form-control-lg" type="password" placeholder="PASSWORD" aria-label=".form-control-lg example" name="memberPW">
+            </div><!-- modalOpenBox-right--form -->
+            <div class="btn">
+              <button>Log in now</button>
+            </div><!-- modalOpenBox-right--btn -->
+          </form>
+        </div><!-- modalOpenBox-right -->
+      </article><!-- modalOpenBox -->
+    </section><!-- modalLogin -->
+
+    <!-- 회원가입 -->
+    <section id="modalBoxjoin" class="modalBoxLoginJoin modalBoxJoin">
+      <article id="modalCloseBtn" class="modalCloseBtn">
+      </article><!-- modalCloseBtn -->
+      <article id="modalOpenBox" class="modalOpenBox">
+        <div class="modalOpenBox-left">
+          <div class="modalOpenBox-left--title">
+            <p>Welcome!</p>
+          </div><!-- modalOpenBox-left--title -->
+          <div class="modalOpenBox-left--img">
+            <img src="img/smile-o.png" alt="">
+          </div><!-- modalOpenBox-left--img -->
+          <div class="modalOpenBox-left--signUp">
+            <p>Are you a member? <a id="clickLogin">Log in now</a></p>
+          </div><!-- modalOpenBox-left--signUp -->
+        </div><!-- modalOpenBox-left -->
+        <div class="modalOpenBox-right">
+          <div class="modalOpenBox-right--title">
+            <p>Register with your Name & Password</p>
+          </div><!-- modalOpenBox-right--title -->
+          <form th:action="@{/main/index}" method="POST">
+            <div class="form">
+              <p>USERNAME(*)</p>
+              <input class="form-control form-control-lg" type="text" placeholder="Username" aria-label=".form-control-lg example" name="memberID">
+              <p>PASSWORD(*)</p>
+              <input class="form-control form-control-lg" type="password" placeholder="Password" aria-label=".form-control-lg example" name="memberPW">
+              <p>E-MAIL(*)</p>
+              <input class="form-control form-control-lg" type="email" placeholder="E-mail" aria-label=".form-control-lg example" name="memberEmail">
+            </div><!-- modalOpenBox-right--form -->
+            <div class="btn">
+              <button>Create Account</button>
+            </div><!-- modalOpenBox-right--btn -->
+          </form>
+        </div><!-- modalOpenBox-right -->
+      </article><!-- modalOpenBox -->
+    </section><!-- modalLogin -->
+  <!-- /모달 박스 영역 -->
+  
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script defer>
+    // 로그인
+    joinForm($("#loginBtn"),$("#modalBoxLogin"),$(".modalCloseBtn"));
+    // 회원가입
+    joinForm($("#joinBtn"),$("#modalBoxjoin"),$(".modalCloseBtn"));
+    Register();
+  </script> 
+</body>
+</html>
